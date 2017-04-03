@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js Sample Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <div  id="demo">
+      <section class="hero is-dark is-medium">
+        <!-- Hero header: will stick at the top -->
+        <div class="hero-head">
+          <header class="nav">
+            <div class="container">
+              <div class="nav-left">
+                <p class="nav-item">
+                  GitHub Repo Test
+                </p>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title">
+              レポジトリ追跡なう「{{ repo }}」
+            </h1>
+            <h2 class="subtitle">
+              好きなレポジトリの最新コミットを追跡
+            </h2>
+            <div class="field">
+              <input class="input my-smallize" v-model="repo" />
+            </div>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <nav class="tabs is-boxed is-fullwidth">
+            <div class="container">
+              <ul>
+                <li
+                v-for="branch in branches"
+                v-bind:class="{ 'is-active': branch === active }">
+                  <a>{{ branch }}</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <div class="container">
+
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./example.js"></script>
+  </body>
+</html>
